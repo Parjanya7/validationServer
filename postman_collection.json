@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "326d4acd-a1e6-409e-a3df-8298e7b99f80",
+		"name": "requestValidtation",
+		"description": "The Collection consist of a GET and a POST request. In which GET has email and number in its req.query. And POST has email and password in req.body. Both request sends data to get validations performed on them.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getValidationRequest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:2000/getValidation?email=parjanyapatel130@gmail.com&number =6380541373",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"getValidation"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "parjanyapatel130@gmail.com"
+						},
+						{
+							"key": "number ",
+							"value": "6380541373"
+						}
+					]
+				},
+				"description": "GET request consisting query params as email and number which are sent to be performed validation on."
+			},
+			"response": []
+		},
+		{
+			"name": "postValidationRequest",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "parjanyapatel130@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "somePassword_007",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:2000/validation",
+					"host": [
+						"localhost"
+					],
+					"port": "2000",
+					"path": [
+						"validation"
+					]
+				},
+				"description": "POST requst consisting req body of email and password to be validated."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Yannarascala_007",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "Parjanya_",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ae60cc3e-bbd7-496f-a4a9-11ff1599c069",
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Pre-request scripting.\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "54b8d800-86da-491d-bae7-80e3fdff5bbb",
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Post-request script.\");"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "4cc55a3d-1e2a-4079-9bcc-6daa40323915",
+			"key": "url",
+			"value": "localhost:2000",
+			"type": "string"
+		},
+		{
+			"id": "fdd61c51-1bcb-4e5b-a09c-d4f94b69b50b",
+			"key": "validation",
+			"value": "post",
+			"type": "string"
+		},
+		{
+			"id": "da02d04e-b34e-4a28-913d-301a15d7931f",
+			"key": "getValidation",
+			"value": "get",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,9 +1,8 @@
 const express = require('express');
-const InputValidator = require('../validation/validator');
 
 const router = express.Router();
 
-router.get('/', InputValidator ,( req, res ) => {
+router.get('/', ( req, res ) => {
     
     res.json({
         msg: { 

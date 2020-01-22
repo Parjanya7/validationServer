@@ -1,9 +1,8 @@
 const express = require('express');
-const InputValidator = require('../validation/validator');
 
 const router = express.Router();
 
-router.post('/', InputValidator , ( req, res ) => {
+router.post('/', ( req, res ) => {
 
     res.json({
         msg: { 
